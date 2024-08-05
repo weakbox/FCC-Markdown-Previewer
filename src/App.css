@@ -5,25 +5,50 @@
 }
 
 .background {
-  padding: 2em;
-  background-color: rgb(169, 207, 159);
+  padding: 0 2em 2em;
+  margin: 1em;
+  background-color: rgb(159, 207, 167);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 h1 {
-  margin-bottom: 0.5em;
+  margin: 0.5em 0;
 }
 
 .markdown-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
   gap: 2em;
   padding: 1em;
   background-color: white;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  height: 700px;
+  width: 100%;
+}
+
+textarea {
+  height: 100%;
+  width: 40%;
+  overflow-y: scroll;
+  resize: none;
+}
+
+#preview {
+  height: 100%;
+  width: 60%;
+  overflow-y: scroll;
+}
+
+#preview, img {
+  max-width: 100%;
 }
