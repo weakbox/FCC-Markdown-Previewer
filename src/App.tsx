@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      {/* Blank! */}
+      <div>Hello World!</div>
     </>
   );
 }
