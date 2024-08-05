@@ -1,15 +1,31 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
+const defaultMarkdown = `# Welcome to my React Markdown Previewer!`;
+
+const convertMarkdown = (text: string) => {
+  return `MARKDOWN: ` + text;
+};
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [text, setText] = useState(convertMarkdown(defaultMarkdown));
+
+  const handleChange = (event: any) => {
+    setText(convertMarkdown(event.target.value));
+  };
 
   return (
-    <>
-      <div>Hello World!</div>
-    </>
+    <div className="background">
+      <h1>Markdown Previewer</h1>
+      <div className="markdown-container">
+        <textarea 
+          id="editor"
+          onChange={handleChange}
+          defaultValue={defaultMarkdown}
+        ></textarea>
+        <div id="preview">{text}</div>
+      </div>
+    </div>
   );
 }
 
