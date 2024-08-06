@@ -60,8 +60,12 @@ function App() {
 
   return (
     <>
-      <div className="background">
-        <h1>Simple Markdown Previewer</h1>
+      <div className="app-container">
+        <h2 id="header">Markdown Previewer</h2>
+        <div className="labels">
+          <p>Raw text</p>
+          <p>Markdown<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/312px-Markdown-mark.svg.png"></img></p>
+        </div>
         <div className="markdown-container">
           <textarea 
             id="editor"
