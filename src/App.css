@@ -26,6 +26,7 @@
   padding: 0.2em;
   font-weight: bold;
   gap: 1em;
+  background-color: rgb(192, 245, 245);
 }
 
 .labels img {
@@ -69,11 +70,14 @@
 
 /* Elements within the Markdown preview: */
 #preview pre {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 253, 255);
   margin: 1em 0;
   padding: 0.5em 1em;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid black;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   width: fit-content;
+  max-width: 100%;
+  text-wrap: wrap;
 }
 
 #preview h1 {
@@ -106,8 +110,8 @@
   margin-left: 1.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  color:rgb(28, 150, 150);
-  border-left: 5px solid rgb(100, 19, 100);
+  color:rgb(8, 80, 80);
+  border-left: 5px solid rgb(8, 80, 80);
 }
 
 #preview ul {
@@ -127,4 +131,11 @@ list-style-position: inside;
 #preview img {
   max-width: 100%;
   margin: 1em 0;
+}
+
+.acknowledgements {
+  text-align: center;
+  font-size: x-small;
+  padding: 0.25em;
+  background-color: rgb(192, 245, 245);;
 }
