@@ -2,60 +2,75 @@ import { useState } from 'react';
 import { marked } from 'marked';
 import './App.css';
 
-const defaultInput: string = `# Welcome to my React Markdown Previewer!
+const defaultInput: string = `
+# Markdown syntax guide
 
-## This is a sub-heading...
-### And here's some other cool stuff:
+## Headers
 
-Heres some code, \`<div></div>\`, between 2 backticks.
+# This is a Heading h1
+## This is a Heading h2
+###### This is a Heading h6
+
+## Emphasis
+
+*This text will be italic*  
+_This will also be italic_
+
+**This text will be bold**  
+__This will also be bold__
+
+_You **can** combine them_
+
+## Lists
+
+### Unordered
+
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+
+### Ordered
+
+1. Item 1
+2. Item 2
+3. Item 3
+  1. Item 3a
+  2. Item 3b
+
+## Images
+
+![This is an alt text.](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Halifax-Dartmouth_Ferry_Service_%2821772298471%29.jpg/1920px-Halifax-Dartmouth_Ferry_Service_%2821772298471%29.jpg "This is a sample image.")
+
+## Links
+
+Check out [freeCodeCamp](https://www.freecodecamp.org/)!
+
+## Blockquotes
+
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
+>
+>> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+## Tables
+
+| Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
+
+## Blocks of code
 
 \`\`\`
-// Multi-line code (fast-inverse square root):
-
-float Q_rsqrt(float number)
-{
-  long i;
-  float x2, y;
-  const float threehalfs = 1.5F;
-
-  x2 = number * 0.5F;
-  y  = number;
-  i  = * ( long * ) &y;                       // evil floating point bit level hacking
-  i  = 0x5f3759df - ( i >> 1 );               // what the f***?
-  y  = * ( float * ) &i;
-  y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
-  // y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
-
-  return y;
-}
+let message = 'Hello world';
+alert(message);
 \`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
+## Inline code
 
-There's also [links](https://www.freecodecamp.org), and
-> Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`;
+This web site is using \`markedjs/marked\`.
+`;
 
 const convertMarkdown = (text: string): any => {
   return marked.parse(text, { gfm: true, });
