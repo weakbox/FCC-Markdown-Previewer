@@ -13,7 +13,7 @@ Heres some code, \`<div></div>\`, between 2 backticks.
 // this is multi-line code:
 
 function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+  if (firstLine == '\`\`\`' \\ lastLine == '\`\`\`') {
     return multiLineCode;
   }
 }
@@ -48,7 +48,7 @@ And here. | Okay. | I think we get it.
 `;
 
 const convertMarkdown = (text: string): any => {
-  return marked.parse(text);
+  return marked.parse(text, { gfm: true, });
 };
 
 function App() {
@@ -59,20 +59,22 @@ function App() {
   };
 
   return (
-    <div className="background">
-      <h1>Simple Markdown Previewer</h1>
-      <div className="markdown-container">
-        <textarea 
-          id="editor"
-          onChange={handleChange}
-          defaultValue={defaultInput}
-        ></textarea>
-        <div 
-          id="preview"
-          dangerouslySetInnerHTML={ {__html: convertMarkdown(text)} }
-        ></div>
+    <>
+      <div className="background">
+        <h1>Simple Markdown Previewer</h1>
+        <div className="markdown-container">
+          <textarea 
+            id="editor"
+            onChange={handleChange}
+            defaultValue={defaultInput}
+          ></textarea>
+          <div 
+            id="preview"
+            dangerouslySetInnerHTML={ {__html: convertMarkdown(text)} }
+          ></div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
