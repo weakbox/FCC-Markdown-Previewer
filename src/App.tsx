@@ -88,7 +88,7 @@ function App() {
       <div className="page-container">
         <div className="page">
           <div className="label">
-            <p>freeCodeCamp</p>
+            <p>fCC</p>
             <p>Raw Input</p>
             <p>(Text)</p>
           </div>
@@ -101,7 +101,7 @@ function App() {
         </div>
         <div className="page">
           <div className="label">
-            <p>freeCodeCamp</p>
+            <p>fCC</p>
             <p>Preview</p>
             <p>(Markdown)</p>
           </div>
