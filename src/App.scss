@@ -62,7 +62,7 @@ $blockquote-color: rgb(33, 97, 194);
 
 .page {
   height: auto;
-  min-height: 200px;
+  min-height: 300px;
   max-height: 80vh;
   width: 100%;
   min-width: 360px;
@@ -166,5 +166,9 @@ $blockquote-color: rgb(33, 97, 194);
 @media only screen and (max-width: 1000px) {
   .page-container {
     flex-direction: column;
+  }
+
+  .editor {
+    min-height: 300px;
   }
 }
