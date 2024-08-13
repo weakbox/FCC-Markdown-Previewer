@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { marked } from 'marked';
-import './App.css';
+import './App.scss';
 
 const defaultInput: string = `
 # Markdown syntax guide
@@ -85,28 +85,32 @@ function App() {
 
   return (
     <>
-      <div className="app-container">
-        <h2 id="header">Markdown Previewer</h2>
-        <div className="labels">
-          <p>Raw Text</p>
-          <p>Markdown<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/312px-Markdown-mark.svg.png"></img></p>
-        </div>
-        <div className="markdown-container">
-          <textarea 
+      <div className="page-container">
+        <div className="page">
+          <div className="label">
+            <p>freeCodeCamp</p>
+            <p>Raw Input</p>
+            <p>Markdown Previewer</p>
+          </div>
+          <textarea
             id="editor"
+            className="editor"
             onChange={handleChange}
             defaultValue={defaultInput}
           ></textarea>
-          <div 
+        </div>
+        <div className="page">
+          <div className="label">
+            <p>freeCodeCamp</p>
+            <p>Markdown</p>
+            <p>Markdown Previewer</p>
+          </div>
+          <div
             id="preview"
+            className="preview"
             dangerouslySetInnerHTML={ {__html: convertMarkdown(text)} }
           ></div>
         </div>
-        <p className='acknowledgements'>
-          Written for freeCodeCamp's "Front End Development Libraries" course.
-          Powered by <a href="https://react.dev/" target="_blank">React</a> and <a href="https://marked.js.org/" target="_blank">Marked</a>.
-          See the project at <a href="https://github.com/weakbox/FCC-Markdown-Previewer" target="_blank">Github</a>.
-        </p>
       </div>
     </>
   );
