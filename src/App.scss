@@ -40,6 +40,8 @@ $page-color: rgb(255, 255, 255);
 .label {
   @include flex-row();
   @include computo-font(rgb(255, 255, 255));
+  position: sticky;
+  top: 0;
   padding: 0.7em 1em 0.5em 1em;
   text-align: center;
   background-color: $label-color;
@@ -51,15 +53,16 @@ $page-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2em;
-  height: 100%;
+  border: 2px solid blue;
+  padding: 2em;
 }
 
 .page {
-  height: 100%;
-  max-height: 90vh;
-  width: 50%;
+  height: auto;
+  max-height: 80vh;
+  width: 100%;
   overflow-y: auto;
   border: 2px solid black;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -67,7 +70,12 @@ $page-color: rgb(255, 255, 255);
 }
 
 .editor {
+  box-sizing: border-box;
+  border: none;
+  overflow-y: auto;
   margin: 0.5em;
+  height: 100%;
+  width: 100%;
   resize: none;
 }
 
@@ -148,4 +156,10 @@ list-style-position: inside;
   font-size: x-small;
   padding: 0.25em;
   background-color: rgb(192, 245, 245);;
+}
+
+@media only screen and (max-width: 1000px) {
+  .page-container {
+    flex-direction: column;
+  }
 }

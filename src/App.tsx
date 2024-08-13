@@ -90,7 +90,7 @@ function App() {
           <div className="label">
             <p>freeCodeCamp</p>
             <p>Raw Input</p>
-            <p>Markdown Previewer</p>
+            <p>(Text)</p>
           </div>
           <textarea
             id="editor"
@@ -102,8 +102,8 @@ function App() {
         <div className="page">
           <div className="label">
             <p>freeCodeCamp</p>
-            <p>Markdown</p>
-            <p>Markdown Previewer</p>
+            <p>Preview</p>
+            <p>(Markdown)</p>
           </div>
           <div
             id="preview"
